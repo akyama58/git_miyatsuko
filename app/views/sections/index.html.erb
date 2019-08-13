@@ -1,0 +1,21 @@
+<h2 data-component='base/h2' class='contenteditable'>部署一覧<br></br></h2>
+<table class='table' data-component='data_set/table'>
+  <thead>
+    <tr>
+      <th class='contenteditable'>部署名
+        <br></br></th>
+      <th class='contenteditable'></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sections.each do |section| -%>
+<tr data-iterator='sections'>
+      <td data-name='section.sec_name'><%= section.sec_name %></td>
+      <td class='operation x-content'>
+        <%= link_to("表示", section_path(section), class: "btn btn-sm btn-default contenteditable" , "data-component" => "data/link") %>
+        <%= link_to("編集", edit_section_path(section), class: "btn btn-sm btn-default contenteditable" , "data-component" => "data/link") %>
+        <%= link_to("削除", section_path(section), class: "btn btn-sm btn-default contenteditable" , "data-method" => "delete" , "data-component" => "data/link") %>
+      </td>
+    </tr><% end -%>
+  </tbody>
+</table><%= link_to("新規部署登録", new_section_path, class: "btn btn-sm btn-default contenteditable" , data: { component: "base/anchor" } ) %>

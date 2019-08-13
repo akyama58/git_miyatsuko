@@ -1,0 +1,13 @@
+<h2 data-component='base/h2' class='contenteditable'>部署情報編集<br></br></h2>
+<%= form_for(@section, url: section_path, method: "patch", html: { class: "form form-horizontal x-content", data: {component: "form/horizontal", method: "patch", model: "@section" }} ) do |f| %>
+  <div class='form-group' data-component='form_element/text_field'>
+    <label class='col-sm-3 control-label contenteditable'>部署名</label>
+    <div class='col-sm-5 x-content'>
+      <%= f.text_field(:sec_name, class: "form-control", data: { name: "@section.sec_name" }) %></div>
+  </div>
+  <div class='form-group'>
+    <div class='col-sm-offset-3 col-sm-5 x-content'>
+      <%= f.submit("保存", class: "btn btn-default contenteditable", data: { component: "form_element/submit"} ) %>
+    </div>
+  </div>
+<% end -%>

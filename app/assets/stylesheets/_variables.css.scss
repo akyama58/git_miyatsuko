@@ -1,0 +1,4 @@
+$bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;
+$icon-font-path:   if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
+$icon-font-name:   "glyphicons-halflings-regular" !default;
+$icon-font-svg-id: "glyphicons_halflingsregular" !default;

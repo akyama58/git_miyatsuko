@@ -1,0 +1,26 @@
+<h2 data-component='base/h2' class='contenteditable'>社員一覧<br></br></h2>
+<table class='table table-bordered' data-component='data_set/table'>
+  <thead>
+    <tr>
+      <th class='contenteditable'>社員ID
+      <th class='contenteditable'>名前</th>
+      <th class='contenteditable'>年齢</th>
+      <th class='contenteditable'>部署</th>
+      <th class='contenteditable'>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| -%>
+<tr data-iterator='employees'>
+      <td data-name='employee.emp_id'><%= employee.emp_id %></td>
+      <td data-name='employee.name'><%= employee.name %></td>
+      <td data-name='employee.age'><%= employee.age %></td>
+    　<td data-name='employee.busho'><%= employee.section.sec_name %></td>
+      <td class='operation x-content'>
+        <%= link_to("表示", employee_path(employee), class: "btn btn-sm btn-default contenteditable" , "data-component" => "data/link") %>
+        <%= link_to("編集", edit_employee_path(employee), class: "btn btn-sm btn-default contenteditable" , "data-component" => "data/link") %>
+        <%= link_to("削除", employee_path(employee), class: "btn btn-sm btn-default contenteditable" , "data-method" => "delete" , "data-component" => "data/link") %>
+      </td>
+    </tr><% end -%>
+  </tbody>
+</table><%= link_to("新規社員登録", new_employee_path, class: "btn btn-sm btn-default contenteditable" , data: { component: "base/anchor" } ) %>

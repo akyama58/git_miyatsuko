@@ -1,0 +1,33 @@
+<h2 data-component='base/h2' class='contenteditable'>新規社員登録</h2>
+<%= form_for(@employee, url: employees_path, method: "post", html: { class: "form form-horizontal x-content", data: {component: "form/horizontal", method: "post", model: "@employee" }} ) do |f| %>
+  <div class='form-group' data-component='form_element/text_field'>
+    <label class='col-sm-3 control-label contenteditable'>社員ID</label>
+    <div class='col-sm-5 x-content'>
+      <%= f.text_field(:emp_id, class: "form-control", data: { name: "@employee.emp_id" }) %></div>
+  </div>
+  <div class='form-group' data-component='form_element/text_field'>
+    <label class='col-sm-3 control-label contenteditable'>名前</label>
+    <div class='col-sm-5 x-content'>
+      <%= f.text_field(:name, class: "form-control", data: { name: "@employee.name" }) %></div>
+  </div>
+  <div class='form-group' data-component='form_element/number_field'>
+    <label class='col-sm-3 control-label contenteditable'>年齢</label>
+    <div class='col-sm-5 x-content'>
+      <%= f.number_field(:age, class: "form-control", data: { name: "@employee.age" }) %></div>
+  </div>
+  <div class='form-group' data-component='form_element/text_field'>
+    <label class='col-sm-3 control-label contenteditable'>住所</label>
+    <div class='col-sm-5 x-content'>
+      <%= f.text_field(:address, class: "form-control", data: { name: "@employee.address" }) %></div>
+  </div>
+  <div class='form-group' data-component='form_element/relation_select'>
+    <label class='col-sm-3 control-label contenteditable'>部署</label>
+    <div class='col-sm-5 x-content'>
+      <%= f.select(:section_id, relation_select(:Section, :id, :sec_name), {}, { class: "form-control", data: { name: "@employee.section_id", relation: "Section", column: "sec_name"}}) %></div>
+  </div>
+  <div class='form-group'>
+    <div class='col-sm-offset-3 col-sm-5 x-content'>
+      <%= f.submit("保存", class: "btn btn-default contenteditable", data: { component: "form_element/submit"} ) %>
+    </div>
+  </div>
+<% end -%>

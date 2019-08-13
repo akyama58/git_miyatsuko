@@ -1,0 +1,43 @@
+<h2 data-component='base/h2' class='contenteditable'>社員情報</h2>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>社員ID</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+    <p class='data-bind' data-component='data/text' data-name='@employee.emp_id'><%= @employee.emp_id %></p>
+  </div>
+</div>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>名前</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+    <p class='data-bind' data-component='data/text' data-name='@employee.name'><%= @employee.name %></p>
+  </div>
+</div>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>年齢</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+    <p class='data-bind' data-component='data/text' data-name='@employee.age'><%= @employee.age %></p>
+  </div>
+</div>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>住所</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+    <p class='data-bind' data-component='data/text' data-name='@employee.address'><%= @employee.address %></p>
+  </div>
+</div>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>部署</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+    <p class='data-bind' data-component='data/text' data-name='@employee.busho'><%= @employee.section.sec_name %></p>
+  </div>
+</div>
+<%= link_to("編集", edit_employee_path(@employee), class: "btn btn-sm btn-default contenteditable" , "data-component" => "data/link") %>
+<%= link_to("戻る", employees_path, class: "btn btn-sm btn-default contenteditable" , data: { component: "base/anchor" } ) %>
